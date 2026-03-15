@@ -1,0 +1,50 @@
+.registro-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5; /* Un gris muy claro para diferenciar del blanco */
+}
+
+.registro-card {
+  max-width: 450px;
+  width: 90%;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
+.registro-btn {
+  height: 48px;
+  margin-top: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+mat-card-title {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #3f51b5;
+  margin-bottom: 0.5rem;
+}
+
+mat-card-subtitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.footer-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-link a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: bold;
+}
