@@ -1,0 +1,54 @@
+<div class="main-content">
+  <h1 style="text-align: center">Carrito</h1>
+
+  <div *ngIf="carrito.length === 0">
+    <p style="text-align: center">No hay productos en el carrito</p>
+  </div>
+
+  <div class="carrito-container" *ngIf="carrito.length > 0">
+
+    <mat-card class="product-card" *ngFor="let item of carrito; let i = index">
+
+      <div class="card-content">
+
+        <img
+          class="product-image"
+          [src]="'/api/subir/imagen/' + item.producto.imagen.trim()"
+        >
+
+        <div class="info">
+
+          <h2>{{ item.producto.nombre }}</h2>
+          <p class="price">Q {{ item.producto.precio }}</p>
+
+          <div class="cantidad">
+            <button mat-mini-fab color="warn" (click)="cambiarCantidad(i, -1)">-</button>
+
+            <span>{{ item.cantidad }}</span>
+
+            <button mat-mini-fab color="primary" (click)="cambiarCantidad(i, 1)">+</button>
+          </div>
+
+          <p class="subtotal">
+            Subtotal: Q {{ item.producto.precio * item.cantidad }}
+          </p>
+
+        </div>
+
+      </div>
+
+    </mat-card>
+
+  </div>
+
+  <div class="total" *ngIf="carrito.length > 0">
+    <h2>Total: Q {{ total() }}</h2>
+  </div>
+
+  <div class="acciones" *ngIf="carrito.length > 0">
+    <button mat-button class="btn-pedido" (click)="confirmarPedido()">
+      <mat-icon>shopping_cart_checkout</mat-icon>
+      Realizar pedido
+    </button>
+  </div>
+</div>

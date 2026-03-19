@@ -1,0 +1,85 @@
+.carrito-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-card {
+  width: 80%;
+  max-width: 800px;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info {
+  flex: 1;
+}
+
+.price {
+  font-weight: bold;
+  color: #0b2d5a;
+  font-size: 18px;
+}
+
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cantidad span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.subtotal {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.total {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.acciones {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-pedido {
+  border: 2px solid #0b2d59;
+  color: #0b2d59;
+  padding: 10px 22px;
+  border-radius: 15px;
+  font-weight: 500;
+  background-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-pedido:hover {
+  background-color: #0b2d59;
+  color: white;
+}
+
+.main-content {
+  padding-bottom: 30px;
+}

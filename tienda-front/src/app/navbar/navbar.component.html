@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="navbar">
+
+  <div class="app-name"
+        routerLink="/inicio">Tienda Grupo 2</div>
+
+  <span class="spacer"></span>
+
+  <span class="user-name">Hola, Andrés</span>
+
+  <button mat-fab
+          class="custom-fab"
+          [matBadge]="cantidad"
+          matBadgeColor="warn"
+          matBadgeOverlap="false"
+          [matBadgeHidden]="cantidad === 0"
+          routerLink="/carrito">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>

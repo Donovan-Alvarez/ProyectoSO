@@ -7,3 +7,17 @@ export interface UsuarioRegistro {
   email: string;
   password?: string;
 }
+
+export interface Producto {
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  stock: number;
+  imagen: string;
+  id: number;
+}
+
+export interface ItemCarrito {
+  producto: Producto;
+  cantidad: number;
+}

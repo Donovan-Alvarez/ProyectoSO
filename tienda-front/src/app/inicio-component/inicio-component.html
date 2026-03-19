@@ -1,1 +1,28 @@
-<p>inicio-component works!</p>
+<div class="main-content">
+  <h1>Productos</h1>
+
+  <div class="card-container">
+    @for (producto of productos; track producto.id) {
+
+      <mat-card class="product-card">
+
+        <img mat-card-image
+             [src]="'/api/subir/imagen/' + producto.imagen.trim()">
+
+        <mat-card-content>
+          <h2>{{ producto.nombre }}</h2>
+          <p>{{ producto.descripcion }}</p>
+          <p class="price">Q {{ producto.precio }}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button matButton="outlined"
+                  (click)="agregarAlCarrito(producto)">
+            Agregar</button>
+        </mat-card-actions>
+
+      </mat-card>
+    }
+  </div>
+
+</div>
