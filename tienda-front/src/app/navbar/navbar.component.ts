@@ -5,12 +5,13 @@ import { MatFabButton } from '@angular/material/button';
 import { MatBadge } from '@angular/material/badge';
 import { RouterLink } from '@angular/router';
 import { TiendaService } from '../services/tienda.service';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  imports: [MatToolbar, MatIcon, MatFabButton, MatBadge, RouterLink],
+  imports: [MatToolbar, MatIcon, MatFabButton, MatBadge, RouterLink, MatTooltip],
 })
 export class NavbarComponent implements OnInit {
   username: string = 'Andres';

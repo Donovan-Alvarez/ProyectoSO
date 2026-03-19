@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmDialogComponent } from '../dialogo-confirma/confirm-dialog.component';
 import { MatIcon } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito-component',
@@ -22,6 +23,7 @@ export class CarritoComponent implements OnInit {
     private tiendaService: TiendaService,
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -63,10 +65,14 @@ export class CarritoComponent implements OnInit {
     this.tiendaService.crearPedido(request).subscribe({
       next: () => {
         this.snackBar.open('Pedido realizado con éxito', 'Cerrar', {
-          duration: 3000,
+          duration: 2000,
         });
 
         this.tiendaService.limpiarCarrito();
+
+        setTimeout(() => {
+          this.router.navigate(['/pedidos']);
+        }, 2000);
       },
       error: () => {
         this.snackBar.open('Error al realizar el pedido', 'Cerrar', {

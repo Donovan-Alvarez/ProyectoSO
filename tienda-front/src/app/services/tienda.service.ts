@@ -87,4 +87,8 @@ export class TiendaService {
   crearPedido(request: any): Observable<any> {
     return this.http.post(`${this.urlBase}/pedidos`, request);
   }
+
+  getMisPedidos(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.urlBase}/pedidos/mis-pedidos`);
+  }
 }

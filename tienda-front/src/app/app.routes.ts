@@ -4,6 +4,7 @@ import { InicioComponent } from './inicio-component/inicio-component';
 import { CarritoComponent } from './carrito-component/carrito-component';
 import { authGuard } from './auth-guard/auth-guard';
 import { Register } from './register/register';
+import { PedidosComponent } from './pedidos-component/pedidos.component';
 
 export const routes: Routes = [
   { path: '', component: Login },
@@ -16,6 +17,11 @@ export const routes: Routes = [
   {
     path: 'carrito',
     component: CarritoComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'pedidos',
+    component: PedidosComponent,
     canActivate: [authGuard],
   },
 

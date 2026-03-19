@@ -1,0 +1,12 @@
+.pedidos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.pedido-card {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+}

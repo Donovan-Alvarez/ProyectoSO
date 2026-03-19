@@ -1,0 +1,23 @@
+<div class="main-content">
+  <h1 style="text-align: center">Mis pedidos</h1>
+
+  <div *ngIf="pedidos.length === 0">
+    <p>No tienes pedidos aún</p>
+  </div>
+
+  <div class="pedidos-container" *ngIf="pedidos.length > 0">
+
+    <mat-card class="pedido-card" *ngFor="let pedido of pedidos">
+
+      <mat-card-content>
+        <h2>Pedido #{{ pedido.id }}</h2>
+
+        <p><strong>Fecha:</strong> {{ pedido.fecha }}</p>
+        <p><strong>Total:</strong> Q {{ pedido.total }}</p>
+
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+</div>
