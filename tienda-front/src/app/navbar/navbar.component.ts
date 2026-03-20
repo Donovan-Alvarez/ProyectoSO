@@ -24,4 +24,8 @@ export class NavbarComponent implements OnInit {
       this.cantidad = carrito.reduce((sum, item) => sum + (item.cantidad || 0), 0);
     });
   }
+
+  logout() {
+    this.tiendaService.logout();
+  }
 }

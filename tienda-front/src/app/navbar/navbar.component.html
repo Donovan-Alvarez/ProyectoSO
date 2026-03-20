@@ -1,7 +1,8 @@
 <mat-toolbar color="primary" class="navbar">
 
-  <div class="app-name"
-        routerLink="/inicio">Tienda Grupo 2</div>
+  <div class="app-name">
+    <a routerLink="/inicio">Tienda Grupo 2</a>
+  </div>
 
   <span class="spacer"></span>
 
@@ -20,5 +21,13 @@
           routerLink="/pedidos"
           matTooltip="Pedidos">
     <mat-icon>fact_check</mat-icon>
+  </button>
+
+  <button mat-fab
+          class="custom-fab"
+          (click)="logout()"
+          matTooltip="Cerrar sesión"
+          routerLink="/">
+    <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>

@@ -11,11 +11,14 @@ export class TiendaService {
 
   private carrito: ItemCarrito[] = [];
 
+  private authSubject = new BehaviorSubject<boolean>(!!localStorage.getItem('token'));
+  auth$ = this.authSubject.asObservable();
+
   private carritoSubject = new BehaviorSubject<ItemCarrito[]>([]);
   carrito$ = this.carritoSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    this.cargarCarritoInicial(); // 🔥 clave
+    this.cargarCarritoInicial();
   }
 
   //LOGIN
@@ -23,11 +26,19 @@ export class TiendaService {
     return this.http.post<LoginResponse>(`${this.urlBase}/auth/login`, credentials).pipe(
       tap((res) => {
         localStorage.setItem('token', res.token);
+        this.authSubject.next(true);
       }),
     );
   }
 
-  //PRODUCTOS
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('carrito');
+    this.carrito = [];
+    this.carritoSubject.next([]);
+    this.authSubject.next(false);
+  }
+
   getProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(`${this.urlBase}/producto`);
   }
@@ -80,7 +91,7 @@ export class TiendaService {
 
   private guardar() {
     localStorage.setItem('carrito', JSON.stringify(this.carrito));
-    this.carritoSubject.next([...this.carrito]); // 🔥 copia para asegurar cambio
+    this.carritoSubject.next([...this.carrito]);
   }
 
   // PEDIDO
